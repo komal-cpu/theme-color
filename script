@@ -1,0 +1,22 @@
+$(document).ready(function(){
+  $(".dark_mode").click(function(){
+    $("body").removeClass("light_site");
+    $("body").addClass("dark_site");
+    if(typeof(Storage) !== "undefined") {
+            localStorage.setItem("color",'dark_site');
+        }
+  });
+   $(document).ready(function(){
+    if(typeof(Storage) !== "undefined" && localStorage.getItem("color") !='') {
+        $('body').addClass(localStorage.getItem("color"));
+    }
+    });
+  
+  $(".light_mode").click(function(){
+    $("body").removeClass("dark_site");
+     $("body").addClass("light_site");
+     if(typeof(Storage) !== "undefined") {
+            localStorage.setItem("color",'light_site');
+        }
+   });
+});
